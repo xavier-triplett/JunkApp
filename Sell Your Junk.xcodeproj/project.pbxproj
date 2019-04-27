@@ -14,6 +14,7 @@
 		B92BBF242270DC4D00EE21B1 /* DatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BBF232270DC4D00EE21B1 /* DatabaseSource.swift */; };
 		B92BBF262270E5E200EE21B1 /* BuyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BBF252270E5E200EE21B1 /* BuyTableViewController.swift */; };
 		B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93117DE227385C300B378AA /* HomeScreenViewController.swift */; };
+		B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621103227403E6005558E2 /* AddScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B92BBF232270DC4D00EE21B1 /* DatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSource.swift; sourceTree = "<group>"; };
 		B92BBF252270E5E200EE21B1 /* BuyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTableViewController.swift; sourceTree = "<group>"; };
 		B93117DE227385C300B378AA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		B9621103227403E6005558E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B92BBF232270DC4D00EE21B1 /* DatabaseSource.swift */,
 				B92BBF252270E5E200EE21B1 /* BuyTableViewController.swift */,
 				B93117DE227385C300B378AA /* HomeScreenViewController.swift */,
+				B9621103227403E6005558E2 /* AddScreenViewController.swift */,
 			);
 			path = "Sell Your Junk";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */,
 				B92BBF262270E5E200EE21B1 /* BuyTableViewController.swift in Sources */,
 				B92BBF112270304900EE21B1 /* AppDelegate.swift in Sources */,
+				B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
