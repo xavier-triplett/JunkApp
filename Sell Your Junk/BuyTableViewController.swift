@@ -8,26 +8,20 @@
 
 import UIKit
 
-class BuyTableViewController: UITableViewController {
+class BuyTableViewController: UITableViewController, DataHandler {
 
-    var data = [Item]()
+    var data: [Item]?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        updateData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    func updateData() {
-        let test = MyData()
-        test.GetData()
-        data = test.data
+        let ds = MyData()
+        ds.delegate = self
+        ds.GetData()
     }
 
+    func handle(fetchedData: [Item]) {
+        data = fetchedData
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 //
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,17 +30,17 @@ class BuyTableViewController: UITableViewController {
 ////    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return data.count;
-        
+        if let data = data {
+            return data.count
+        }
+        return 0
     }
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuyCellReuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = data[indexPath.item].Name
-        // Configure the cell...
+        cell.textLabel?.text = data?[indexPath.item].Name
 
         return cell
     }

@@ -15,8 +15,13 @@ struct Item: Codable {
     var Description = ""
 }
 
+protocol DataHandler {
+    func handle(fetchedData: [Item])
+}
+
 class MyData: NSObject {
-    var data = [Item]()
+    
+    var delegate: DataHandler?
     
     func GetData(){
         let urlString = "http://127.0.0.1:8888/JunkGet.php"
@@ -30,8 +35,10 @@ class MyData: NSObject {
     func urlSessionDataTaskCompletionHandler(possibleData: Data?, possibleResponse: URLResponse?, possibleError: Error?) {
         do {
             let dataArray = try JSONDecoder().decode([Item].self, from: possibleData!)
-            data = dataArray
-            
+
+            DispatchQueue.main.async {
+                self.delegate?.handle(fetchedData: dataArray)
+            }
         }
         catch {
             print("Error decoding JSON data: \(error)")
