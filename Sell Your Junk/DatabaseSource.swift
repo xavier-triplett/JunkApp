@@ -8,11 +8,22 @@
 
 import Foundation
 
-struct Item: Codable {
+class Item: Codable {
     var Name = ""
     var Price = 0
     var Category = ""
     var Description = ""
+    
+    init(Name: String, Price: Int, Category: String, Description: String) {
+        self.Name = Name
+        self.Price = Price
+        self.Category = Category
+        self.Description = Description
+    }
+    
+    convenience init() {
+        self.init(Name: "", Price: 0, Category: "", Description: "")
+    }
 }
 
 protocol DataHandler {

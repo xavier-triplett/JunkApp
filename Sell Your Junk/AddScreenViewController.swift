@@ -14,6 +14,22 @@ class AddScreenViewController: UIViewController {
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
+    @IBAction func savePress(_ sender: Any) {
+        let addItem: Item = Item()
+        if let name = nameField?.text {
+            addItem.Name = name
+        }
+        if let price = Int(priceField.text!) {
+            addItem.Price = price
+        }
+        if let category = categoryField?.text {
+            addItem.Category = category
+        }
+        if let description = descriptionField?.text {
+            addItem.Description = description
+        }
+        print(addItem.Name, addItem.Category, addItem.Price, addItem.Description)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
