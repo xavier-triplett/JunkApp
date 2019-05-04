@@ -26,21 +26,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmQ-eE-aFO">
-                                <rect key="frame" x="125" y="539" width="164" height="59"/>
+                                <rect key="frame" x="161" y="539" width="92" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <state key="normal" title="Buy Items"/>
+                                <state key="normal" title="Items"/>
                                 <connections>
                                     <segue destination="4Fh-S5-xbC" kind="show" id="3S1-5t-BLE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qaj-SJ-387">
-                                <rect key="frame" x="132" y="683" width="150" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <state key="normal" title="Add Item"/>
-                                <connections>
-                                    <segue destination="iOJ-2O-0L8" kind="show" id="2uc-OY-uMA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,6 +121,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vB5-rJ-10Z"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add" id="t1B-xg-4o4"/>
                     <connections>
                         <outlet property="categoryField" destination="FWi-Tu-Mge" id="q66-9l-YHo"/>
                         <outlet property="descriptionField" destination="fB8-si-OPo" id="4qY-i9-Qcx"/>
@@ -139,12 +131,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SM-ES-MPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731.8840579710147" y="-62.276785714285708"/>
+            <point key="canvasLocation" x="1664" y="744"/>
         </scene>
-        <!--Buy View Controller-->
+        <!--Buy Screen-->
         <scene sceneID="rEJ-FB-xwo">
             <objects>
-                <viewController id="2oY-R0-hxY" customClass="BuyViewController" customModule="Sell_Your_Junk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Buy Screen" id="2oY-R0-hxY" customClass="BuyViewController" customModule="Sell_Your_Junk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qHM-XM-RLT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +201,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="anN-Q1-03n"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Buy" id="I3V-mD-Dyy"/>
                     <connections>
                         <outlet property="CategoryField" destination="UcX-Et-0u5" id="mu3-BI-9Jn"/>
                         <outlet property="DescriptionField" destination="tMl-aQ-krC" id="J97-ih-KG0"/>
@@ -218,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZsI-pc-f2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88.405797101449281" y="1561.6071428571429"/>
+            <point key="canvasLocation" x="822" y="1530"/>
         </scene>
         <!--Buy Screen-->
         <scene sceneID="DZv-nb-dfi">
@@ -243,13 +236,20 @@
                             <outlet property="delegate" destination="4Fh-S5-xbC" id="Udc-02-WzY"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Items" id="DcV-g3-UNH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aTe-U2-xAC">
+                            <connections>
+                                <segue destination="iOJ-2O-0L8" kind="show" id="k5e-Pa-CvD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="2oY-R0-hxY" kind="show" identifier="goToBuyView" id="Vco-cm-N7g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEb-X5-0ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="744"/>
+            <point key="canvasLocation" x="822" y="744"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I4d-w2-DAj">
