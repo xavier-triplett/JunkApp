@@ -12,9 +12,26 @@ class BuyViewController: UIViewController {
 
     var item: Item?
     
+    @IBOutlet weak var NameField: UITextField!
+    @IBOutlet weak var PriceField: UITextField!
+    @IBOutlet weak var CategoryField: UITextField!
+    @IBOutlet weak var DescriptionField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let name = item?.Name {
+            NameField.text = name
+        }
+        if let price = item?.Price {
+            PriceField.text = "\(price)"
+        }
+        if let category = item?.Category {
+            CategoryField.text = category
+        }
+        if let description = item?.Description {
+            DescriptionField.text = description
+        }
         // Do any additional setup after loading the view.
     }
     
