@@ -20,21 +20,52 @@ class AddScreenViewController: UIViewController, DataHandler {
     @IBOutlet weak var descriptionField: UITextField!
     @IBAction func savePress(_ sender: Any) {
         let addItem: Item = Item()
+        var save = true
         if let name = nameField?.text {
             addItem.Name = name
+        } else {
+            save = false
         }
         if let price = Int(priceField.text!) {
             addItem.Price = price
+        } else {
+            save = false
         }
         if let category = categoryField?.text {
             addItem.Category = category
+        } else {
+            save = false
         }
         if let description = descriptionField?.text {
             addItem.Description = description
+        } else {
+            save = false
         }
-        let ds = MyData()
-        ds.delegate = self
-        ds.AddData(addItem)
+        if (save) {
+            let ds = MyData()
+            ds.delegate = self
+            ds.AddData(addItem)
+            
+            let alertController = UIAlertController(
+                title: "Save Successful",
+                message: "Navigate back to items to see the item you just added",
+                preferredStyle: .alert)
+            
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(
+                title: "Save Failed",
+                message: "Please fill in all fields as they are all required",
+                preferredStyle: .alert)
+            
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
