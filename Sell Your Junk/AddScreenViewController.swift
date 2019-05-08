@@ -8,7 +8,11 @@
 
 import UIKit
 
-class AddScreenViewController: UIViewController {
+class AddScreenViewController: UIViewController, DataHandler {
+    func handle(fetchedData: [Item]) {
+        let data = fetchedData
+    }
+    
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var priceField: UITextField!
@@ -28,7 +32,9 @@ class AddScreenViewController: UIViewController {
         if let description = descriptionField?.text {
             addItem.Description = description
         }
-        print(addItem.Name, addItem.Category, addItem.Price, addItem.Description)
+        let ds = MyData()
+        ds.delegate = self
+        ds.AddData(addItem)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -46,7 +46,7 @@ class MyData: NSObject {
     func urlSessionDataTaskCompletionHandler(possibleData: Data?, possibleResponse: URLResponse?, possibleError: Error?) {
         do {
             let dataArray = try JSONDecoder().decode([Item].self, from: possibleData!)
-
+            
             DispatchQueue.main.async {
                 self.delegate?.handle(fetchedData: dataArray)
             }
@@ -55,4 +55,42 @@ class MyData: NSObject {
             print("Error decoding JSON data: \(error)")
         }
     }
+    
+    
+    func AddData(_ data: Item){
+        let urlString = "http://127.0.0.1:8888/JunkPost.php"
+        let urlSession = URLSession(configuration: .default)
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL String")
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let uploadData = try? JSONEncoder().encode(data) else {
+            print("Unable to encode data")
+            return
+        }
+        
+        let dataTask = urlSession.uploadTask(with: urlRequest, from: uploadData, completionHandler: urlSessionUploadTaskCompletionHandler)
+        dataTask.resume()
+    }
+    
+    
+    
+    
+    func urlSessionUploadTaskCompletionHandler(optionalData: Data?, optionalURLResponse: URLResponse?, optionalError: Error?) {
+        if let data = optionalData {
+            let response = String(decoding: data, as: UTF8.self)
+            print(response
+            )
+        }
+        else {
+            print("web service error: returned data is nil")
+        }
+    }
 }
+
