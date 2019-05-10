@@ -8,7 +8,10 @@
 
 import UIKit
 
-class BuyViewController: UIViewController {
+class BuyViewController: UIViewController, DataHandler {
+    func handle(fetchedData: [Item]) {
+        //let data = fetchedData
+    }
 
     var item: Item?
     
@@ -18,6 +21,10 @@ class BuyViewController: UIViewController {
     @IBOutlet weak var DescriptionField: UITextField!
     
     @IBAction func BuyPress(_ sender: Any) {
+        let ds = MyData()
+        ds.delegate = self
+        ds.RemoveData(item!)
+        
     }
     
     override func viewDidLoad() {

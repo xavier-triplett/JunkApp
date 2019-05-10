@@ -79,12 +79,30 @@ class MyData: NSObject {
         dataTask.resume()
     }
     
-    
-    
+    func RemoveData(_ data: Item){
+        let urlString = "http://127.0.0.1:8888/JunkDelete.php"
+        let urlSession = URLSession(configuration: .default)
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL String")
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let removeData = try? JSONEncoder().encode(data) else {
+            print("Unable to encode data")
+            return
+        }
+        
+        let dataTask = urlSession.uploadTask(with: urlRequest, from: removeData, completionHandler: urlSessionUploadTaskCompletionHandler)
+        dataTask.resume()
+    }
     
     func urlSessionUploadTaskCompletionHandler(optionalData: Data?, optionalURLResponse: URLResponse?, optionalError: Error?) {
         if let data = optionalData {
-            let response = String(decoding: data, as: UTF8.self)
             
             var dataArray: [Item] = []
             do {
@@ -101,5 +119,6 @@ class MyData: NSObject {
             print("web service error: returned data is nil")
         }
     }
+
 }
 

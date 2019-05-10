@@ -15,7 +15,7 @@
 		try {
 
 
-			$sql = "DELETE FROM Items WHERE Name = :phpName, Price = :phpPrice, Category = :phpCategory, Description = :phpDescription"; 
+			$sql = "DELETE FROM Items WHERE Name = :phpName AND Price = :phpPrice AND Category = :phpCategory AND Description = :phpDescription"; 
 			
 			$stmt = $dbh->prepare($sql);
 

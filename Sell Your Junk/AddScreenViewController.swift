@@ -10,7 +10,7 @@ import UIKit
 
 class AddScreenViewController: UIViewController, DataHandler {
     func handle(fetchedData: [Item]) {
-        let data = fetchedData
+        //let data = fetchedData
     }
     
 
@@ -22,7 +22,7 @@ class AddScreenViewController: UIViewController, DataHandler {
         let addItem: Item = Item()
         var save = true
         
-        var alertController = UIAlertController(
+        let alertController = UIAlertController(
             title: "",
             message: "\n \n",
             preferredStyle: .alert)
