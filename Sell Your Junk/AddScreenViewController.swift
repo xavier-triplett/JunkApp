@@ -21,51 +21,73 @@ class AddScreenViewController: UIViewController, DataHandler {
     @IBAction func savePress(_ sender: Any) {
         let addItem: Item = Item()
         var save = true
+        
+        var alertController = UIAlertController(
+            title: "",
+            message: "\n \n",
+            preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+
         if let name = nameField?.text {
-            addItem.Name = name
-        } else {
-            save = false
+            if (!name.isEmpty) {
+                addItem.Name = name
+            } else {
+                save = false
+                if var message = alertController.message {
+                    message += "Name is required! \n \n"
+                    alertController.message = message
+                }
+            }
         }
+        
         if let price = Int(priceField.text!) {
             addItem.Price = price
         } else {
             save = false
+            if var message = alertController.message {
+                message += "Price is required and must be a number! \n \n"
+                alertController.message = message
+            }
         }
+        
         if let category = categoryField?.text {
-            addItem.Category = category
-        } else {
-            save = false
+            if (!category.isEmpty) {
+                addItem.Category = category
+            } else {
+                save = false
+                if var message = alertController.message {
+                    message += "Category is required! \n \n"
+                    alertController.message = message
+                }
+            }
         }
+        
         if let description = descriptionField?.text {
-            addItem.Description = description
-        } else {
-            save = false
+            if (!description.isEmpty) {
+                addItem.Description = description
+            } else {
+                save = false
+                if var message = alertController.message {
+                    message += "Description is required! \n \n"
+                    alertController.message = message
+                }
+            }
         }
+        
         if (save) {
             let ds = MyData()
             ds.delegate = self
             ds.AddData(addItem)
             
-            let alertController = UIAlertController(
-                title: "Save Successful",
-                message: "Navigate back to items to see the item you just added",
-                preferredStyle: .alert)
+            alertController.title = "Save Successful"
+            alertController.message = "Navigate back to items to see the item you just added"
             
-            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(
-                title: "Save Failed",
-                message: "Please fill in all fields as they are all required",
-                preferredStyle: .alert)
-            
-            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
+            alertController.title = "Save Failed"
         }
-
-
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -43,9 +43,9 @@ class MyData: NSObject {
         }
     }
     
-    func urlSessionDataTaskCompletionHandler(possibleData: Data?, possibleResponse: URLResponse?, possibleError: Error?) {
+    func urlSessionDataTaskCompletionHandler(optionalData: Data?, optionalURLResponse: URLResponse?, optionalError: Error?) {
         do {
-            let dataArray = try JSONDecoder().decode([Item].self, from: possibleData!)
+            let dataArray = try JSONDecoder().decode([Item].self, from: optionalData!)
             
             DispatchQueue.main.async {
                 self.delegate?.handle(fetchedData: dataArray)
@@ -85,8 +85,17 @@ class MyData: NSObject {
     func urlSessionUploadTaskCompletionHandler(optionalData: Data?, optionalURLResponse: URLResponse?, optionalError: Error?) {
         if let data = optionalData {
             let response = String(decoding: data, as: UTF8.self)
-            print(response
-            )
+            
+            var dataArray: [Item] = []
+            do {
+                dataArray = try JSONDecoder().decode([Item].self, from: optionalData!)
+            } catch {
+                print("Unable to decode data")
+            }
+            
+            DispatchQueue.main.async {
+                self.delegate?.handle(fetchedData: dataArray)
+            }
         }
         else {
             print("web service error: returned data is nil")
