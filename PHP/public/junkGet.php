@@ -19,10 +19,6 @@
         $where = "WHERE " . substr($where, 5);
         if ($allItems) {
 	        $sql .=  " " . $where;
-	        print_r($sql);
-	        echo "\n";
-	        print_r($where);
-	        echo "\n";
         }
 
         
