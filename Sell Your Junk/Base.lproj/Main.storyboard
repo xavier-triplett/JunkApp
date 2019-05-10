@@ -278,6 +278,9 @@
                                 <rect key="frame" x="177" y="762" width="70" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="BuyPress:" destination="2oY-R0-hxY" eventType="touchUpInside" id="657-hq-2mT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

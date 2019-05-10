@@ -17,6 +17,9 @@ class BuyViewController: UIViewController {
     @IBOutlet weak var CategoryField: UITextField!
     @IBOutlet weak var DescriptionField: UITextField!
     
+    @IBAction func BuyPress(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
