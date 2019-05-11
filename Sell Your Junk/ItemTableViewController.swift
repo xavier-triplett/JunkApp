@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuyTableViewController: UITableViewController, DataHandler {
+class ItemTableViewController: UITableViewController, DataHandler {
 
     var data: [Item]?
     
@@ -38,7 +38,7 @@ class BuyTableViewController: UITableViewController, DataHandler {
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BuyCellReuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCellReuseIdentifier", for: indexPath)
 
         cell.textLabel?.text = data?[indexPath.item].Name
 

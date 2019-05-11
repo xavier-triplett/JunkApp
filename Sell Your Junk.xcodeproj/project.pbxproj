@@ -12,7 +12,7 @@
 		B92BBF182270304A00EE21B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92BBF172270304A00EE21B1 /* Assets.xcassets */; };
 		B92BBF1B2270304A00EE21B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92BBF192270304A00EE21B1 /* LaunchScreen.storyboard */; };
 		B92BBF242270DC4D00EE21B1 /* DatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BBF232270DC4D00EE21B1 /* DatabaseSource.swift */; };
-		B92BBF262270E5E200EE21B1 /* BuyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BBF252270E5E200EE21B1 /* BuyTableViewController.swift */; };
+		B92BBF262270E5E200EE21B1 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BBF252270E5E200EE21B1 /* ItemTableViewController.swift */; };
 		B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93117DE227385C300B378AA /* HomeScreenViewController.swift */; };
 		B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621103227403E6005558E2 /* AddScreenViewController.swift */; };
 		B979EAD0227CC798003F4CF9 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979EACF227CC798003F4CF9 /* BuyViewController.swift */; };
@@ -26,7 +26,7 @@
 		B92BBF1A2270304A00EE21B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B92BBF1C2270304A00EE21B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92BBF232270DC4D00EE21B1 /* DatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSource.swift; sourceTree = "<group>"; };
-		B92BBF252270E5E200EE21B1 /* BuyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTableViewController.swift; sourceTree = "<group>"; };
+		B92BBF252270E5E200EE21B1 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		B93117DE227385C300B378AA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		B9621103227403E6005558E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
 		B979EACF227CC798003F4CF9 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				B92BBF22227031E100EE21B1 /* Include */,
 				B92BBF142270304900EE21B1 /* Main.storyboard */,
 				B92BBF232270DC4D00EE21B1 /* DatabaseSource.swift */,
-				B92BBF252270E5E200EE21B1 /* BuyTableViewController.swift */,
+				B92BBF252270E5E200EE21B1 /* ItemTableViewController.swift */,
 				B93117DE227385C300B378AA /* HomeScreenViewController.swift */,
 				B9621103227403E6005558E2 /* AddScreenViewController.swift */,
 				B979EACF227CC798003F4CF9 /* BuyViewController.swift */,
@@ -157,7 +157,7 @@
 			files = (
 				B92BBF242270DC4D00EE21B1 /* DatabaseSource.swift in Sources */,
 				B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */,
-				B92BBF262270E5E200EE21B1 /* BuyTableViewController.swift in Sources */,
+				B92BBF262270E5E200EE21B1 /* ItemTableViewController.swift in Sources */,
 				B92BBF112270304900EE21B1 /* AppDelegate.swift in Sources */,
 				B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */,
 				B979EAD0227CC798003F4CF9 /* BuyViewController.swift in Sources */,
