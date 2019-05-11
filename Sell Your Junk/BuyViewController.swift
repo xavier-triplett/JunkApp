@@ -24,7 +24,18 @@ class BuyViewController: UIViewController, DataHandler {
         let ds = MyData()
         ds.delegate = self
         ds.RemoveData(item!)
+        let alertController = UIAlertController(
+            title: "Buy Successful",
+            message: "\n",
+            preferredStyle: .alert)
         
+        alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        
+        if let name = item?.Name, var message = alertController.message {
+            message = message + "Successfully bought \(name)!"
+            alertController.message = message
+        }
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
