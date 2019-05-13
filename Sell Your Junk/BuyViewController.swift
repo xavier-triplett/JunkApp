@@ -45,7 +45,11 @@ class BuyViewController: UIViewController, DataHandler {
             NameField.text = name
         }
         if let price = item?.Price {
-            PriceField.text = "\(price)"
+            let nsprice = NSNumber(value: price)
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            
+            PriceField.text = formatter.string(from: nsprice)
         }
         if let category = item?.Category {
             CategoryField.text = category
