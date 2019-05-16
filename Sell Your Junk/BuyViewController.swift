@@ -15,7 +15,6 @@ class BuyViewController: UIViewController, DataHandler {
     var item: Item?
 
     func handle(fetchedData: [Item]) {
-        print("hello")
     }
 
     @IBOutlet weak var NameField: UITextField!
@@ -74,15 +73,14 @@ class BuyViewController: UIViewController, DataHandler {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
     // MARK: - Navigation
-
+ 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         let updateVC = segue.destination as! UpdateScreenViewController
+         updateVC.delegate = self.delegate
+     }
 
 }

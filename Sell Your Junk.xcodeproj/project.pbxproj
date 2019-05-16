@@ -16,6 +16,7 @@
 		B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93117DE227385C300B378AA /* HomeScreenViewController.swift */; };
 		B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621103227403E6005558E2 /* AddScreenViewController.swift */; };
 		B979EAD0227CC798003F4CF9 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979EACF227CC798003F4CF9 /* BuyViewController.swift */; };
+		B9D1C28F228DCFAB001DF783 /* UpdateScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1C28E228DCFAB001DF783 /* UpdateScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B93117DE227385C300B378AA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		B9621103227403E6005558E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
 		B979EACF227CC798003F4CF9 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		B9D1C28E228DCFAB001DF783 /* UpdateScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B93117DE227385C300B378AA /* HomeScreenViewController.swift */,
 				B9621103227403E6005558E2 /* AddScreenViewController.swift */,
 				B979EACF227CC798003F4CF9 /* BuyViewController.swift */,
+				B9D1C28E228DCFAB001DF783 /* UpdateScreenViewController.swift */,
 			);
 			path = "Sell Your Junk";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B92BBF242270DC4D00EE21B1 /* DatabaseSource.swift in Sources */,
+				B9D1C28F228DCFAB001DF783 /* UpdateScreenViewController.swift in Sources */,
 				B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */,
 				B92BBF262270E5E200EE21B1 /* ItemTableViewController.swift in Sources */,
 				B92BBF112270304900EE21B1 /* AppDelegate.swift in Sources */,

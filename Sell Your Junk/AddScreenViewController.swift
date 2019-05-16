@@ -13,7 +13,6 @@ class AddScreenViewController: UIViewController, DataHandler {
     var delegate: DataHandler?
 
     func handle(fetchedData: [Item]) {
-        print("hello")
     }
 
     
