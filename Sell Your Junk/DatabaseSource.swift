@@ -101,6 +101,28 @@ class MyData: NSObject {
         dataTask.resume()
     }
     
+    func UpdateData(_ data: Item){
+        let urlString = "http://127.0.0.1:8888/JunkPut.php"
+        let urlSession = URLSession(configuration: .default)
+    
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL String")
+            return
+        }
+    
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+        guard let updateData = try? JSONEncoder().encode(data) else {
+            print("Unable to encode data")
+            return
+        }
+    
+        let dataTask = urlSession.uploadTask(with: urlRequest, from: updateData, completionHandler: urlSessionUploadTaskCompletionHandler)
+        dataTask.resume()
+    }
+    
     func urlSessionUploadTaskCompletionHandler(optionalData: Data?, optionalURLResponse: URLResponse?, optionalError: Error?) {
         self.GetData()
     }

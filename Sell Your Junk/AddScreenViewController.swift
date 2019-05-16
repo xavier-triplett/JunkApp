@@ -9,11 +9,14 @@
 import UIKit
 
 class AddScreenViewController: UIViewController, DataHandler {
-    func handle(fetchedData: [Item]) {
-        //let data = fetchedData
-    }
     
+    var delegate: DataHandler?
 
+    func handle(fetchedData: [Item]) {
+        print("hello")
+    }
+
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
@@ -26,10 +29,8 @@ class AddScreenViewController: UIViewController, DataHandler {
             title: "",
             message: "\n \n",
             preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
 
-        if let name = nameField?.text {
+        if let name = self.nameField?.text {
             if (!name.isEmpty) {
                 addItem.Name = name
             } else {
@@ -41,7 +42,7 @@ class AddScreenViewController: UIViewController, DataHandler {
             }
         }
         
-        if let price = Int(priceField.text!) {
+        if let price = Int(self.priceField.text!) {
             addItem.Price = price
         } else {
             save = false
@@ -51,7 +52,7 @@ class AddScreenViewController: UIViewController, DataHandler {
             }
         }
         
-        if let category = categoryField?.text {
+        if let category = self.categoryField?.text {
             if (!category.isEmpty) {
                 addItem.Category = category
             } else {
@@ -63,7 +64,7 @@ class AddScreenViewController: UIViewController, DataHandler {
             }
         }
         
-        if let description = descriptionField?.text {
+        if let description = self.descriptionField?.text {
             if (!description.isEmpty) {
                 addItem.Description = description
             } else {
@@ -76,19 +77,33 @@ class AddScreenViewController: UIViewController, DataHandler {
         }
         
         if (save) {
-            let ds = MyData()
-            ds.delegate = self
-            ds.AddData(addItem)
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: {
+                (_)in
+                self.addItemCompletionHandler(addItem)
+            }))
             
             alertController.title = "Save Successful"
             alertController.message = "Navigate back to items to see the item you just added"
             
         } else {
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            
             alertController.title = "Save Failed"
         }
-        
+
         self.present(alertController, animated: true, completion: nil)
+        
     }
+    
+    func addItemCompletionHandler(_ item: Item) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+        let ds = MyData()
+        ds.delegate = self.delegate
+        ds.AddData(item)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

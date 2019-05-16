@@ -94,6 +94,10 @@ class ItemTableViewController: UITableViewController, DataHandler {
         if let indexPath = tableView.indexPathForSelectedRow {
             let buyVC = segue.destination as! BuyViewController
             buyVC.item = data?[indexPath.item]
+            buyVC.delegate = self
+        } else {
+            let addVC = segue.destination as! AddScreenViewController
+            addVC.delegate = self
         }
     }
  

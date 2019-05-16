@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <state key="normal" title="Items"/>
                                 <connections>
-                                    <segue destination="4Fh-S5-xbC" kind="show" id="3S1-5t-BLE"/>
+                                    <segue destination="4Fh-S5-xbC" kind="show" identifier="goToItemScreen" id="3S1-5t-BLE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell Your Junk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of9-4W-AUz">
@@ -274,8 +274,16 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="d5v-hg-3IZ"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="522-mY-24I">
+                                <rect key="frame" x="233" y="766" width="124" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <segue destination="HFP-lr-9JA" kind="show" identifier="goToUpdateScreen" id="ST0-1u-Xwq"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zb-tx-02x">
-                                <rect key="frame" x="177" y="762" width="70" height="63"/>
+                                <rect key="frame" x="57" y="762" width="70" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Buy"/>
                                 <connections>
@@ -285,11 +293,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="anN-Q1-03n" firstAttribute="trailing" secondItem="6Zb-tx-02x" secondAttribute="trailing" constant="167" id="8ts-Tx-IZz"/>
+                            <constraint firstItem="anN-Q1-03n" firstAttribute="trailing" secondItem="6Zb-tx-02x" secondAttribute="trailing" constant="287" id="8ts-Tx-IZz"/>
                             <constraint firstItem="6Zb-tx-02x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="anN-Q1-03n" secondAttribute="leading" id="BEt-Am-zjD"/>
+                            <constraint firstItem="522-mY-24I" firstAttribute="bottom" secondItem="6Zb-tx-02x" secondAttribute="bottom" id="ENs-XX-J4j"/>
                             <constraint firstItem="b7d-du-bRb" firstAttribute="centerX" secondItem="qHM-XM-RLT" secondAttribute="centerX" id="G7V-Xg-azm"/>
                             <constraint firstItem="b7d-du-bRb" firstAttribute="top" secondItem="anN-Q1-03n" secondAttribute="top" constant="124" id="Tl4-Fv-Xxu"/>
+                            <constraint firstItem="522-mY-24I" firstAttribute="trailing" secondItem="b7d-du-bRb" secondAttribute="trailing" id="abe-Xm-832"/>
                             <constraint firstItem="b7d-du-bRb" firstAttribute="centerY" secondItem="qHM-XM-RLT" secondAttribute="centerY" id="gdc-j1-4hZ"/>
+                            <constraint firstItem="522-mY-24I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Zb-tx-02x" secondAttribute="trailing" constant="8" symbolic="YES" id="u0U-Kw-tTq"/>
                             <constraint firstItem="6Zb-tx-02x" firstAttribute="top" secondItem="b7d-du-bRb" secondAttribute="bottom" constant="78" id="yhx-Mb-xiY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="anN-Q1-03n"/>
@@ -305,6 +316,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZsI-pc-f2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="1530"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lkn-jU-SMN">
+            <objects>
+                <viewController id="HFP-lr-9JA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SGn-zK-kJq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lNQ-8i-yTE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8US-Ov-a50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="1529"/>
         </scene>
         <!--Item Screen-->
         <scene sceneID="DZv-nb-dfi">
