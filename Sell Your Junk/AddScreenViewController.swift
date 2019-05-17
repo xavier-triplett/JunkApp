@@ -26,7 +26,7 @@ class AddScreenViewController: UIViewController, DataHandler {
         
         let alertController = UIAlertController(
             title: "",
-            message: "",
+            message: "\n \n",
             preferredStyle: .alert)
 
         if let name = self.nameField?.text {
@@ -41,13 +41,31 @@ class AddScreenViewController: UIViewController, DataHandler {
             }
         }
         
-        if let price = Double(self.priceField.text!) {
-            addItem.Price = price
-        } else {
-            save = false
-            if var message = alertController.message {
-                message += "Price is required and must be a number! \n \n"
-                alertController.message = message
+        if let price = self.priceField?.text {
+            if (!price.isEmpty) {
+                if let doublePrice = Double(price) {
+                    addItem.Price = doublePrice
+                } else {
+                    if (price.contains(",")) {
+                        save = false
+                        if var message = alertController.message {
+                            message += "Please remove the comma from price! \n \n"
+                            alertController.message = message
+                        }
+                    } else {
+                        if var message = alertController.message {
+                            message += "Price must be a number! Decimal places are optional. \n \n"
+                            alertController.message = message
+                        }
+                    }
+                    save = false
+                }
+            } else {
+                save = false
+                if var message = alertController.message {
+                    message += "Price is required! \n \n"
+                    alertController.message = message
+                }
             }
         }
         
