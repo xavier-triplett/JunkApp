@@ -357,7 +357,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5o-3a-JQQ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5o-3a-JQQ">
                                                 <rect key="frame" x="160" y="0.0" width="140" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="Y0x-Ge-Kib"/>
@@ -377,7 +377,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNx-Us-gMg">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNx-Us-gMg">
                                                 <rect key="frame" x="160" y="0.0" width="140" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="hEy-hK-Qtc"/>
@@ -397,7 +397,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-dB-D8C">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-dB-D8C">
                                                 <rect key="frame" x="160" y="0.0" width="140" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="u4A-rb-TOE"/>
@@ -419,6 +419,9 @@
                                 <rect key="frame" x="158" y="777" width="98" height="59"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="pressSave:" destination="b0A-DD-JkX" eventType="touchUpInside" id="5ds-GO-Y3M"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -431,6 +434,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e4g-8l-Dax"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryField" destination="gNx-Us-gMg" id="YEs-F7-7GG"/>
+                        <outlet property="descriptionField" destination="ZGE-dB-D8C" id="FcU-io-nv1"/>
+                        <outlet property="nameField" destination="XZa-q8-eOg" id="a6h-tb-lWW"/>
+                        <outlet property="priceField" destination="e5o-3a-JQQ" id="EWc-q6-P3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JaN-s3-mMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

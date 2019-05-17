@@ -10,11 +10,11 @@ import Foundation
 
 class Item: Codable {
     var Name = ""
-    var Price = 0
+    var Price = 0.0
     var Category = ""
     var Description = ""
     
-    init(Name: String, Price: Int, Category: String, Description: String) {
+    init(Name: String, Price: Double, Category: String, Description: String) {
         self.Name = Name
         self.Price = Price
         self.Category = Category
@@ -22,7 +22,7 @@ class Item: Codable {
     }
     
     convenience init() {
-        self.init(Name: "", Price: 0, Category: "", Description: "")
+        self.init(Name: "", Price: 0.0, Category: "", Description: "")
     }
 }
 

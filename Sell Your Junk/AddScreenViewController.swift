@@ -26,7 +26,7 @@ class AddScreenViewController: UIViewController, DataHandler {
         
         let alertController = UIAlertController(
             title: "",
-            message: "\n \n",
+            message: "",
             preferredStyle: .alert)
 
         if let name = self.nameField?.text {
@@ -41,7 +41,7 @@ class AddScreenViewController: UIViewController, DataHandler {
             }
         }
         
-        if let price = Int(self.priceField.text!) {
+        if let price = Double(self.priceField.text!) {
             addItem.Price = price
         } else {
             save = false
@@ -82,7 +82,7 @@ class AddScreenViewController: UIViewController, DataHandler {
             }))
             
             alertController.title = "Save Successful"
-            alertController.message = "Navigate back to items to see the item you just added"
+            alertController.message = "Click close to navigate back to see the item you just added!"
             
         } else {
             alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))

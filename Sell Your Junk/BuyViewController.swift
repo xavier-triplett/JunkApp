@@ -36,7 +36,7 @@ class BuyViewController: UIViewController, DataHandler {
         }))
         
         if let name = self.item?.Name, var message = alertController.message {
-            message = message + "Successfully bought \(name)!"
+            message = message + "Successfully bought \(name)! Click close to navigate back to the item list."
             alertController.message = message
         }
         self.present(alertController, animated: true, completion: nil)
@@ -81,6 +81,7 @@ class BuyViewController: UIViewController, DataHandler {
          // Pass the selected object to the new view controller.
          let updateVC = segue.destination as! UpdateScreenViewController
          updateVC.delegate = self.delegate
+         updateVC.item = self.item
      }
 
 }

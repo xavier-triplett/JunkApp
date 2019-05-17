@@ -17,9 +17,98 @@ class UpdateScreenViewController: UIViewController, DataHandler {
     func handle(fetchedData: [Item]) {
     }
     
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var categoryField: UITextField!
+    @IBOutlet weak var descriptionField: UITextField!
+    
+    @IBAction func pressSave(_ sender: Any) {
+        let updateItem: Item = Item()
+        var save = true
+        
+        let alertController = UIAlertController(
+            title: "",
+            message: "",
+            preferredStyle: .alert)
+        
+        if let price = Double(self.priceField.text!) {
+            updateItem.Price = price
+        } else {
+            save = false
+            if var message = alertController.message {
+                message += "Price is required and must be a number! \n \n"
+                alertController.message = message
+            }
+        }
+        
+        if let category = self.categoryField?.text {
+            if (!category.isEmpty) {
+                updateItem.Category = category
+            } else {
+                save = false
+                if var message = alertController.message {
+                    message += "Category is required! \n \n"
+                    alertController.message = message
+                }
+            }
+        }
+        
+        if let description = self.descriptionField?.text {
+            if (!description.isEmpty) {
+                updateItem.Description = description
+            } else {
+                save = false
+                if var message = alertController.message {
+                    message += "Description is required! \n \n"
+                    alertController.message = message
+                }
+            }
+        }
+        
+        if (save) {
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: {
+                (_)in
+                self.updateItemCompletionHandler(updateItem)
+            }))
+            
+            alertController.title = "Update Successful"
+            alertController.message = "Click close to navigate back to items to see the item you just added."
+            
+        } else {
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            
+            alertController.title = "Update Failed"
+        }
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func updateItemCompletionHandler(_ item: Item) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+            navController.popViewController(animated: true)
+        }
+        let ds = MyData()
+        ds.delegate = self.delegate
+        ds.UpdateData(item)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test")
+        
+        if let name = self.item?.Name {
+            self.nameField.text = name
+        }
+        if let price = self.item?.Price {
+            self.priceField.text = "\(price)"
+        }
+        if let category = self.item?.Category {
+            self.categoryField.text = category
+        }
+        if let description = self.item?.Description {
+            self.descriptionField.text = description
+        }
         // Do any additional setup after loading the view.
     }
     
