@@ -41,7 +41,11 @@ class ItemTableViewController: UITableViewController, DataHandler {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCellReuseIdentifier", for: indexPath)
 
         cell.textLabel?.text = data?[indexPath.item].Name
-
+        
+        if let price = data?[indexPath.item].Price {
+            cell.detailTextLabel?.text = "\(price)"
+        }
+        
         return cell
     }
     
