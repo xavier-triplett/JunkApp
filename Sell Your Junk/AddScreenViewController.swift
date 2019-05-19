@@ -19,7 +19,8 @@ class AddScreenViewController: UIViewController, DataHandler {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
-    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var descriptionField: UITextView!
+    
     @IBAction func savePress(_ sender: Any) {
         let addItem: Item = Item()
         var save = true

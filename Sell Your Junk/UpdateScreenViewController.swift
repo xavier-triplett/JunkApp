@@ -20,7 +20,7 @@ class UpdateScreenViewController: UIViewController, DataHandler {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
-    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var descriptionField: UITextView!
     
     @IBAction func pressSave(_ sender: Any) {
         let updateItem: Item = Item()

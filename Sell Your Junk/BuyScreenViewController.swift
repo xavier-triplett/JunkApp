@@ -20,7 +20,8 @@ class BuyScreenViewController: UIViewController, DataHandler {
     @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var PriceField: UITextField!
     @IBOutlet weak var CategoryField: UITextField!
-    @IBOutlet weak var DescriptionField: UITextField!
+
+    @IBOutlet weak var DescriptionField: UITextView!
     
     @IBAction func BuyPress(_ sender: Any) {
         let alertController = UIAlertController(

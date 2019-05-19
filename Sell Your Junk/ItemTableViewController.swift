@@ -43,7 +43,11 @@ class ItemTableViewController: UITableViewController, DataHandler {
         cell.textLabel?.text = data?[indexPath.item].Name
         
         if let price = data?[indexPath.item].Price {
-            cell.detailTextLabel?.text = "\(price)"
+            let nsprice = NSNumber(value: price)
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            
+            cell.detailTextLabel?.text = formatter.string(from: nsprice)
         }
         
         return cell
