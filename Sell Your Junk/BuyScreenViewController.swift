@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuyViewController: UIViewController, DataHandler {
+class BuyScreenViewController: UIViewController, DataHandler {
 
     var delegate: DataHandler?
     

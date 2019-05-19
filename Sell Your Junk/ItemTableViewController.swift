@@ -92,7 +92,7 @@ class ItemTableViewController: UITableViewController, DataHandler {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let indexPath = tableView.indexPathForSelectedRow {
-            let buyVC = segue.destination as! BuyViewController
+            let buyVC = segue.destination as! BuyScreenViewController
             buyVC.item = data?[indexPath.item]
             buyVC.delegate = self
         } else {

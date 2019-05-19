@@ -179,7 +179,7 @@
         <!--Buy Screen-->
         <scene sceneID="rEJ-FB-xwo">
             <objects>
-                <viewController title="Buy Screen" id="2oY-R0-hxY" customClass="BuyViewController" customModule="Sell_Your_Junk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Buy Screen" id="2oY-R0-hxY" customClass="BuyScreenViewController" customModule="Sell_Your_Junk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qHM-XM-RLT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,7 +279,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <segue destination="b0A-DD-JkX" kind="show" id="JKJ-l2-eyS"/>
+                                    <segue destination="b0A-DD-JkX" kind="show" identifier="goToUpdateView" id="JKJ-l2-eyS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zb-tx-02x">
@@ -471,7 +471,7 @@
                     <navigationItem key="navigationItem" title="Items" id="DcV-g3-UNH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aTe-U2-xAC">
                             <connections>
-                                <segue destination="iOJ-2O-0L8" kind="show" id="k5e-Pa-CvD"/>
+                                <segue destination="iOJ-2O-0L8" kind="show" identifier="goToAddScreen" id="k5e-Pa-CvD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -15,7 +15,7 @@
 		B92BBF262270E5E200EE21B1 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BBF252270E5E200EE21B1 /* ItemTableViewController.swift */; };
 		B93117DF227385C300B378AA /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93117DE227385C300B378AA /* HomeScreenViewController.swift */; };
 		B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621103227403E6005558E2 /* AddScreenViewController.swift */; };
-		B979EAD0227CC798003F4CF9 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979EACF227CC798003F4CF9 /* BuyViewController.swift */; };
+		B979EAD0227CC798003F4CF9 /* BuyScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B979EACF227CC798003F4CF9 /* BuyScreenViewController.swift */; };
 		B9D1C28F228DCFAB001DF783 /* UpdateScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1C28E228DCFAB001DF783 /* UpdateScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		B92BBF252270E5E200EE21B1 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		B93117DE227385C300B378AA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		B9621103227403E6005558E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
-		B979EACF227CC798003F4CF9 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		B979EACF227CC798003F4CF9 /* BuyScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyScreenViewController.swift; sourceTree = "<group>"; };
 		B9D1C28E228DCFAB001DF783 /* UpdateScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 				B92BBF252270E5E200EE21B1 /* ItemTableViewController.swift */,
 				B93117DE227385C300B378AA /* HomeScreenViewController.swift */,
 				B9621103227403E6005558E2 /* AddScreenViewController.swift */,
-				B979EACF227CC798003F4CF9 /* BuyViewController.swift */,
+				B979EACF227CC798003F4CF9 /* BuyScreenViewController.swift */,
 				B9D1C28E228DCFAB001DF783 /* UpdateScreenViewController.swift */,
 			);
 			path = "Sell Your Junk";
@@ -164,7 +164,7 @@
 				B92BBF262270E5E200EE21B1 /* ItemTableViewController.swift in Sources */,
 				B92BBF112270304900EE21B1 /* AppDelegate.swift in Sources */,
 				B9621104227403E6005558E2 /* AddScreenViewController.swift in Sources */,
-				B979EAD0227CC798003F4CF9 /* BuyViewController.swift in Sources */,
+				B979EAD0227CC798003F4CF9 /* BuyScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
