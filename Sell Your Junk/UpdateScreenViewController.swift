@@ -34,7 +34,7 @@ class UpdateScreenViewController: UIViewController, DataHandler {
         if let price = self.priceField?.text {
             if (!price.isEmpty) {
                 if let doublePrice = Double(price) {
-                    addItem.Price = doublePrice
+                    updateItem.Price = doublePrice
                 } else {
                     save = false
                     if (price.contains(",")) {
@@ -60,7 +60,7 @@ class UpdateScreenViewController: UIViewController, DataHandler {
         
         if let category = self.categoryField?.text {
             if (!category.trimmingCharacters(in: .whitespaces).isEmpty) {
-                addItem.Category = category
+                updateItem.Category = category
             } else if (!category.isEmpty) {
                 save = false
                 if var message = alertController.message {
@@ -78,7 +78,7 @@ class UpdateScreenViewController: UIViewController, DataHandler {
         
         if let description = self.descriptionField?.text {
             if (!description.trimmingCharacters(in: .whitespaces).isEmpty) {
-                addItem.Description = description
+                updateItem.Description = description
             } else if (!description.isEmpty) {
                 save = false
                 if var message = alertController.message {
