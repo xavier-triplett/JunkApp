@@ -31,6 +31,10 @@ class UpdateScreenViewController: UIViewController, DataHandler {
             message: "\n \n",
             preferredStyle: .alert)
         
+        if let name = self.nameField?.text {
+            updateItem.Name = name
+        }
+        
         if let price = self.priceField?.text {
             if (!price.isEmpty) {
                 if let doublePrice = Double(price) {
